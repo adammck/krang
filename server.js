@@ -1,12 +1,17 @@
-var connect = require("connect"),
-    sharejs = require("share").server;
+var sharejs = require("share").server,
+    express = require("express"),
+    app = express();
 
-var server = connect(
-  connect.static(__dirname + "/node_modules/marked/lib"),
-  connect.static(__dirname + "/static")
-);
+app.use(express.static(__dirname + "/node_modules/marked/lib"));
+app.use(express.static(__dirname + "/public"));
 
-var options = { db: { type: "redis" } };
-sharejs.attach(server, options);
+app.get("/:page?", function(req, res) {
+  var page = req.params.page || "index";
+  res.render("index.hjs", { page: page });
+});
 
-server.listen(8000);
+sharejs.attach(app, {
+  db: { type: "redis" }
+});
+
+app.listen(3000);

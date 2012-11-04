@@ -1,0 +1,30 @@
+html, body, #editor {
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#editor,
+#preview {
+  box-sizing: border-box;
+  margin: 20px;
+}
+
+#editor {
+  display: none;
+  resize: none;
+  outline: none;
+  width: 100%;
+  border: 0;
+  font-family: monospace;
+}
+
+#preview {
+  min-height: 100%;
+}
+
+body.edit #editor { display: block; }
+body.edit #preview { display: none; }

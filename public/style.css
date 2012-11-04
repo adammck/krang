@@ -10,7 +10,7 @@ body {
 #editor,
 #preview {
   box-sizing: border-box;
-  margin: 20px;
+  padding: 20px;
 }
 
 #editor {
@@ -20,6 +20,8 @@ body {
   width: 100%;
   border: 0;
   font-family: monospace;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 #preview {
@@ -28,3 +30,50 @@ body {
 
 body.edit #editor { display: block; }
 body.edit #preview { display: none; }
+
+.content {
+  font-family: palatino, serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: #333;
+}
+
+.content a {
+  color: inherit;
+}
+
+.content *:first-child { margin-top: 0; }
+.content *:last-child { margin-bottom: 0; }
+
+.content h1,
+.content h2,
+.content h3,
+.content h4 {
+  font-family: interstate, sans-serif;
+  font-size: 32px;
+  line-height: 40px;
+  margin: 40px 0 20px;
+}
+
+.content p,
+.content ul,
+.content ol,
+.content pre {
+  margin: 20px 0;
+}
+
+.content ul,
+.content ol {
+  padding-left: 1.5em;
+}
+
+.content blockquote {
+  border-left: 10px solid #eee;
+  padding-left: 10px;
+  margin: 0;
+}
+
+.content pre {
+  background: #eee;
+  padding: 10px;
+}

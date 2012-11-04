@@ -11,7 +11,7 @@
     <script src="/krang.js"></script>
   </head>
   <body>
-    <div id="preview"></div>
+    <div id="preview" class="content"></div>
     <textarea id="editor"></textarea>
 
     <script>
